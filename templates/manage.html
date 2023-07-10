@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Manage Your Notes</h1><br>
+    <a class="btn btn-info" href="/add">Add a Note</a><br><br>
+    <div class="table-responsive">
+      <table class="table text-center table-responsive">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Last Updated</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for note in allNotes %}
+              <tr>
+                  <th scope="row">{{loop.index}}</th>
+                  <td>{{note.title}}</td>
+                  <td>{{note.date}}</td>
+                  <td><a class="btn btn-danger mb-1" href="/delete/{{note.id}}"><i class="fa fa-trash"></i></a> <a class="btn btn-warning mb-1" href="/update/{{note.id}}"><i class="fa fa-edit"></i></a></td>
+              </tr>
+              {% endfor %}
+            
+          </tbody>
+        </table>
+      </div>
+{% endblock %}

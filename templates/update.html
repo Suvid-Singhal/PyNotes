@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Update a Note</h1>
+
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.title.label(class="form-label") }}
+    {{ form.title(class="form-control") }}
+    {{ form.content.label(class="form-label") }}
+    {{ form.content(class="form-control") }}        
+    <br>
+    {{ form.submit(class="btn btn-primary mb-2") }}
+  </form>
+  {{ ckeditor.load() }}
+  {{ ckeditor.config(name='content') }}
+{% endblock %}

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="/">PyNotes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav mr-auto">
+      <a class="nav-item nav-link active" href="/">Home</a>
+      <a class="nav-item nav-link" href="/about">About</a>
+      {% if current_user.username %}
+        <a class="nav-item nav-link" href="/notes">My Notes</a>
+        <a class="nav-item nav-link" href="/manage">Manage Notes</a>
+        {% endif %}
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      {% if current_user.username %}
+        <a class="nav-item nav-link mr-auto" href="/logout">Logout</a>
+      {% else %}
+        <a class="nav-item nav-link" href="/login">Login</a>
+        <a class="nav-item nav-link" href="/register">Register</a>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
