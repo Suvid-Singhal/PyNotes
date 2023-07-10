@@ -259,4 +259,4 @@ def my_note(id):
     return render_template("note.html",id=id)'''
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=False)
